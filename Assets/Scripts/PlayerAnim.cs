@@ -17,22 +17,47 @@ public class PlayerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.direction.sqrMagnitude > 0)
+        OnMove();
+        OnRun();
+    }
+
+    #region Movement
+
+    private void OnMove()
+    {
+        if (player.direction.sqrMagnitude > 0)
         {
-            anim.SetInteger("Transition", 1);
+            if(player.isRolling) //se isRolling for true, então altera a transition para 3 e executa a animação
+            {
+                anim.SetTrigger("isRoll");
+            }
+            else //se não executa a animação de caminhada
+            {
+                anim.SetInteger("Transition", 1);
+            }
         }
         else
         {
             anim.SetInteger("Transition", 0);
         }
 
-        if(player.direction.x > 0)
+        if (player.direction.x > 0)
         {
             transform.eulerAngles = new Vector2(0, 0);
         }
-        if(player.direction.x < 0)
+        if (player.direction.x < 0)
         {
             transform.eulerAngles = new Vector2(0, 180);
         }
     }
+
+    void OnRun()
+    {
+        if(player.isRunning)
+        {
+            anim.SetInteger("Transition", 2);
+        }
+    }
+
+    #endregion
 }
