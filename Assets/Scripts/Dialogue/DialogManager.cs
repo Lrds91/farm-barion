@@ -24,7 +24,7 @@ public class DialogManager : MonoBehaviour
     public float conversationSpeed; //velocidade da fala
 
     //variáveis de controle
-    private bool isShowing; //se a janela está visível
+    public bool isShowing; //se a janela está visível
     private int index; //qtd de texto que tem dentro de uma fala
     private string[] sentences;
 
