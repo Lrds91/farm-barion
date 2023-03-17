@@ -21,8 +21,13 @@ MonoBehaviour:
     sentence:
       Portuguese: 'Bem vindo, Aventureiro! '
       English: Welcome, Adventurer!
-  - actorName: 
+  - actorName: "Z\xE9"
     portrait: {fileID: 0}
     sentence:
-      Portuguese: "Obrigado pela recep\xE7\xE3o!"
-      English: Thanks for the reception!
+      Portuguese: "Espere.... Voc\xEA me parece familiar..."
+      English: Wait... You look familiar....
+  - actorName: "Z\xE9"
+    portrait: {fileID: 0}
+    sentence:
+      Portuguese: "Por um acaso voc\xEA n\xE3o seria o her\xF3i de nosso reino?! "
+      English: For instance would you be the hero of our kingdom?!
