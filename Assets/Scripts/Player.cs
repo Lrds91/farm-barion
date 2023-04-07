@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool isPaused;
+    
     [SerializeField] private float speed;
     [SerializeField] private float runSpeed;
 
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour
     private bool _isCutting;
     private bool _isDigging;
     private bool _isWatering;
+
 
     [HideInInspector] public int handlingObj; //esconde a informação desnecessária do inspector
 
@@ -75,33 +78,40 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1)) //Alpha são os números acima do teclado
+        if(!isPaused)
         {
-            handlingObj = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            handlingObj = 1;
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha1)) //Alpha são os números acima do teclado
+            {
+                handlingObj = 0;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                handlingObj = 1;
+            }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            handlingObj = 2;
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                handlingObj = 2;
+            }
+
+            //"salva" a posição que o jogador de acordo com o botão pressionado (dir-esq, cima-baixo)
+            OnInput();
+            OnRun();
+            OnRolling();
+            OnCutting();
+            OnDigging();
+            OnWatering();
+
         }
-
-        //"salva" a posição que o jogador de acordo com o botão pressionado (dir-esq, cima-baixo)
-        OnInput();
-        OnRun();
-        OnRolling();
-        OnCutting();
-        OnDigging();
-        OnWatering();
-
+        
     }
 
     private void FixedUpdate()
     {
-        OnMove();
+        if(!isPaused)
+        {
+            OnMove();
+        }
     }
 
     #region Movement
