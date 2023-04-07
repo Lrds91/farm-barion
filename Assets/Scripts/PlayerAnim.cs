@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerAnim : MonoBehaviour
 {
     private Player player;
     private Animator anim;
-    
+    private Fishing cast;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Player>();
         anim = GetComponent<Animator>();
+        cast = FindObjectOfType<Fishing>();
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class PlayerAnim : MonoBehaviour
             }
             else //se não executa a animação de caminhada
             {
+                anim.SetBool("isRoll", false);
                 anim.SetInteger("Transition", 1);
             }
         }
@@ -75,4 +79,28 @@ public class PlayerAnim : MonoBehaviour
     }
 
     #endregion
+
+    //chamado quando o jogador pressiona F na lagoa
+    public void OnCasting() //cuida da animação de pescaria
+    {
+        anim.SetTrigger("isFishing");
+        player.isPaused = true;
+    }
+
+    //chamado quando termina de executar a animação de pescaria
+    public void OnFishEnd() //puxa o onFishing do script Fishing e faz as verificações de sucesso/falha na pesca
+    {
+        cast.onFishing();
+        player.isPaused = false;
+    }
+
+    public void OnHammeringStarted()
+    {
+        anim.SetBool("constructing", true);
+    }
+
+    public void OnHammeringEnded()
+    {
+        anim.SetBool("constructing", false);
+    }
 }

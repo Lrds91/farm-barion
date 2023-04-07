@@ -8,11 +8,13 @@ public class PlayerItems : MonoBehaviour
     public int totalWood;
     public int carrots;
     public int currentWater;
+    public int fishes;
 
     [Header("Limits")]
     public float waterLimit = 20;
     public float woodLimit = 100;
     public float carrotLimit = 100;
+    public float fishesLimit = 20;
 
     public void WaterLimit(int water)
     {
