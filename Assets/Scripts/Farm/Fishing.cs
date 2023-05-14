@@ -35,7 +35,7 @@ public class Fishing : MonoBehaviour
         if(randomValue <= percentage)
         {
             //conseguir pescar o peixe
-            Instantiate(fishPrefab, player.transform.position + new Vector3(-2f,0f,0f), Quaternion.identity);
+            Instantiate(fishPrefab, player.transform.position + new Vector3(-1f,0f,0f), Quaternion.identity);
         }
         else
         {
