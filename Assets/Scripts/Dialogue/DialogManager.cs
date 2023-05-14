@@ -27,25 +27,17 @@ public class DialogManager : MonoBehaviour
     public bool isShowing; //se a janela está visível
     private int index; //qtd de texto que tem dentro de uma fala
     private string[] sentences;
+    private string[] actorName;
+    private Sprite[] portrait;
+
+    private Player player;
 
     public static DialogManager instance;
 
     private void Awake() //chamado antes de todos os Start() na hierarquia de execução de script
     {
         instance = this;
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = FindObjectOfType<Player>();
     }
 
     IEnumerator TypeSentence() //método que controla a velocidade de aparição da fala
@@ -64,28 +56,37 @@ public class DialogManager : MonoBehaviour
             if (index < sentences.Length - 1)
             {
                 index++;
+                profileSprite.sprite = portrait[index];
+                actorNameText.text = actorName[index];
                 speechText.text = "";
                 StartCoroutine(TypeSentence());
             }
             else //quando terminam os textos
             {
                 speechText.text = "";
+                actorNameText.text = "";
                 index = 0;
                 dialogObj.SetActive(false);
                 sentences = null;
                 isShowing = false; //faz o NPC falar novamente ao encerrar o diálogo anterior
+                player.isPaused = false;
             }
         }
     }
 
-    public void Speech(string[] txt) //chamar a fala do NPC
+    public void Speech(string[] txt, string[] npcName, Sprite[] npcPortrait) //chamar a fala do NPC
     {
         if(!isShowing) //se não estiver falando
         {
             dialogObj.SetActive(true);
             sentences = txt;
+            actorName = npcName;
+            portrait = npcPortrait;
+            profileSprite.sprite = portrait[index];
+            actorNameText.text = actorName[index];
             StartCoroutine(TypeSentence());
             isShowing = true;
+            player.isPaused = true;
         }
     }
 }

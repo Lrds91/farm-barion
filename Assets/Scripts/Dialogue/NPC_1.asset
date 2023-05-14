@@ -17,17 +17,17 @@ MonoBehaviour:
   sentence: 
   dialogue:
   - actorName: "Z\xE9"
-    portrait: {fileID: 0}
+    portrait: {fileID: 1507236373252514473, guid: de2fb38fef7f7d9418e25af03cff01ba, type: 3}
     sentence:
       Portuguese: 'Bem vindo, Aventureiro! '
       English: Welcome, Adventurer!
   - actorName: "Z\xE9"
-    portrait: {fileID: 0}
+    portrait: {fileID: 1507236373252514473, guid: de2fb38fef7f7d9418e25af03cff01ba, type: 3}
     sentence:
       Portuguese: "Espere.... Voc\xEA me parece familiar..."
       English: Wait... You look familiar....
   - actorName: "Z\xE9"
-    portrait: {fileID: 0}
+    portrait: {fileID: 1507236373252514473, guid: de2fb38fef7f7d9418e25af03cff01ba, type: 3}
     sentence:
       Portuguese: "Por um acaso voc\xEA n\xE3o seria o her\xF3i de nosso reino?! "
       English: For instance would you be the hero of our kingdom?!

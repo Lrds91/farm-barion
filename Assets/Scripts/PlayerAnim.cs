@@ -52,7 +52,11 @@ public class PlayerAnim : MonoBehaviour
         {
             if(player.isRolling) //se isRolling for true, então altera a transition para 3 e executa a animação
             {
-                anim.SetTrigger("isRoll");
+                if(anim.GetCurrentAnimatorStateInfo(0).IsName("roll") == false) //0 é o numero da layer. se a animação roll não estiver sendo executada
+                {
+                    anim.SetTrigger("isRoll");
+                }
+
             }
             else //se não executa a animação de caminhada
             {
@@ -96,7 +100,7 @@ public class PlayerAnim : MonoBehaviour
 
     void OnRun()
     {
-        if(player.isRunning)
+        if(player.isRunning && player.direction.sqrMagnitude > 0)
         {
             anim.SetInteger("Transition", 2);
         }

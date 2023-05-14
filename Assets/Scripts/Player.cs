@@ -142,6 +142,10 @@ public class Player : MonoBehaviour
                 speed = initialSpeed;
             }
         }
+        else
+        {
+            isCutting = false;
+        }
     }
 
     void OnInput()
@@ -196,6 +200,10 @@ public class Player : MonoBehaviour
                 speed = initialSpeed;
             }
         }
+        else
+        {
+            isDigging = false;
+        }
     }
     void OnWatering()
     {
@@ -213,6 +221,10 @@ public class Player : MonoBehaviour
                 speed = initialSpeed;
             }
         }
+        else
+        {
+            isWatering = false;
+        }
     }
 
     void OnAttacking()
@@ -229,6 +241,10 @@ public class Player : MonoBehaviour
                 isAttacking = false;
                 speed = initialSpeed;
             }
+        }
+        else
+        {
+            isAttacking = false;
         }
     }
 

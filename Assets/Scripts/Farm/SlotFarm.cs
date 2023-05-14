@@ -5,8 +5,12 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class SlotFarm : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip holeSFX;
+    [SerializeField] private AudioClip carrotSFX;
     [Header("Components")]
-    
+
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite hole;
     [SerializeField] private Sprite carrot;
@@ -16,11 +20,13 @@ public class SlotFarm : MonoBehaviour
     [SerializeField] private int waterAmount; //total de água para nascer uma cenoura
 
     [SerializeField] private bool detecting;
+    private bool isPlayer; //indica se o player está encostando
 
     private int initialDigAmount;
     private int currentWater;
 
     private bool dugHole;
+    private bool carrotPlant;
 
     PlayerItems playerItems;
 
@@ -39,19 +45,22 @@ public class SlotFarm : MonoBehaviour
                 currentWater++;
             }
 
-            if (currentWater >= waterAmount / 2)
+            if (currentWater >= waterAmount / 2 && !carrotPlant)
             {
+                audioSource.PlayOneShot(holeSFX);
                 spriteRenderer.sprite = carrot;
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    spriteRenderer.sprite = hole;
-                    playerItems.carrots++;
-                    currentWater = 0;
-                }
+                carrotPlant = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) && carrotPlant && isPlayer)
+            {
+                audioSource.PlayOneShot(carrotSFX);
+                spriteRenderer.sprite = hole;
+                playerItems.carrots++;
+                currentWater = 0;
             }
         }
-        
     }
 
     public void onHit()
@@ -84,6 +93,10 @@ public class SlotFarm : MonoBehaviour
         {
             detecting = true;
         }
+        if(collision.CompareTag("Player"))
+        {
+            isPlayer = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -91,6 +104,10 @@ public class SlotFarm : MonoBehaviour
         if (collision.CompareTag("Water"))
         {
             detecting = false;
+        }
+        if (collision.CompareTag("Player"))
+        {
+            isPlayer = false;
         }
     }
 }

@@ -11,12 +11,14 @@ public class NPC_Dialogue : MonoBehaviour
     bool playerHit;
 
     private List<string> sentences = new List<string>();
+    private List<string> actorName = new List<string>();
+    private List<Sprite> spriteActor = new List<Sprite>();
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.F) && playerHit)
         {
-            DialogManager.instance.Speech(sentences.ToArray());
+            DialogManager.instance.Speech(sentences.ToArray(), actorName.ToArray(),spriteActor.ToArray());
         }
     }
 
@@ -40,6 +42,9 @@ public class NPC_Dialogue : MonoBehaviour
                     sentences.Add(dialogue.dialogue[i].sentence.English);
                     break;
             }
+
+            actorName.Add(dialogue.dialogue[i].actorName);
+            spriteActor.Add(dialogue.dialogue[i].portrait);
         }
     }
 
