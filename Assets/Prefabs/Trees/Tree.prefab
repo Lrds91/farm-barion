@@ -4919,10 +4919,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cacd28f601d724585c4c5544290211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeHealth: 5
+  treeHealth: 2
   anim: {fileID: 9135372381942158595}
   woodPrefab: {fileID: 4311803581700833828, guid: 0c8819ce80d2a9d44b91ea4dfd159b17, type: 3}
-  totalWood: 3
+  totalWood: 5
   leaves: {fileID: 1161718008}
 --- !u!1 &5550033783506203493
 GameObject:

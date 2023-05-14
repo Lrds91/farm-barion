@@ -5,9 +5,17 @@ using UnityEngine.Rendering;
 
 public class PlayerAnim : MonoBehaviour
 {
+    [Header("Attack Settings")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float radius;
+    [SerializeField] private LayerMask enemyLayer;
+    
     private Player player;
     private Animator anim;
     private Fishing cast;
+    private bool isHitting;
+    private float recoveryTime = 1.5f;
+    private float timeCount;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +30,18 @@ public class PlayerAnim : MonoBehaviour
     {
         OnMove();
         OnRun();
+
+        if(isHitting)
+        {
+            timeCount += Time.deltaTime;
+
+            if (timeCount >= recoveryTime)
+            {
+                isHitting = false;
+                timeCount = 0f;
+            }
+        }
+
     }
 
     #region Movement
@@ -68,6 +88,10 @@ public class PlayerAnim : MonoBehaviour
         {
             anim.SetInteger("Transition", 5);
         }
+        if (player.isAttacking)
+        {
+            anim.SetInteger("Transition", 6);
+        }
     }
 
     void OnRun()
@@ -76,6 +100,32 @@ public class PlayerAnim : MonoBehaviour
         {
             anim.SetInteger("Transition", 2);
         }
+    }
+
+    #endregion
+
+    #region Attack
+
+    public void onAttack()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, enemyLayer);
+
+        if(hit != null)
+        {
+            //atacou o inimigo
+            hit.GetComponentInChildren<AnimationControl>().OnHit();
+        }
+        else
+        {
+
+        }
+    }
+
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(attackPoint.position, radius);
     }
 
     #endregion
@@ -102,5 +152,14 @@ public class PlayerAnim : MonoBehaviour
     public void OnHammeringEnded()
     {
         anim.SetBool("constructing", false);
+    }
+
+    public void OnHit()
+    {
+        if(!isHitting)
+        {
+            anim.SetTrigger("hit");
+            isHitting = true;
+        }
     }
 }

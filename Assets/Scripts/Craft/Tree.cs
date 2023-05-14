@@ -29,14 +29,14 @@ public class Tree : MonoBehaviour
     public void onHit()
     {
         treeHealth--;
-        anim.SetTrigger("isHit"); //trigga animação de hit
+        anim.SetTrigger("isHit"); //ativa a animação de hit
         leaves.Play();
 
         if (treeHealth <= 0) //se HP da árvore for <= 0 então irá instanciar os drops
         {
-            for(int i = 0; i < totalWood; i++)
+            for(int i = 0; i < Random.Range(1,totalWood); i++)
             {
-                Instantiate(woodPrefab, transform.position + new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0f), transform.rotation); //define posição aleatória de spawn do drop
+                Instantiate(woodPrefab, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f), transform.rotation); //define posição aleatória de spawn do drop
             }
             
             anim.SetTrigger("cut");

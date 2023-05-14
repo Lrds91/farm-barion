@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private bool _isCutting;
     private bool _isDigging;
     private bool _isWatering;
+    private bool _isAttacking;
 
 
     [HideInInspector] public int handlingObj; //esconde a informação desnecessária do inspector
@@ -66,6 +67,12 @@ public class Player : MonoBehaviour
         set { _isWatering = value; }
 
     }
+    public bool isAttacking
+    {
+        get { return _isAttacking; }
+        set { _isAttacking = value; }
+
+    }
 
     public bool IsCutting { get => _isCutting; set => _isCutting = value; }
 
@@ -93,6 +100,10 @@ public class Player : MonoBehaviour
             {
                 handlingObj = 2;
             }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                handlingObj = 3;
+            }
 
             //"salva" a posição que o jogador de acordo com o botão pressionado (dir-esq, cima-baixo)
             OnInput();
@@ -101,7 +112,7 @@ public class Player : MonoBehaviour
             OnCutting();
             OnDigging();
             OnWatering();
-
+            OnAttacking();
         }
         
     }
@@ -199,6 +210,23 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 isWatering = false;
+                speed = initialSpeed;
+            }
+        }
+    }
+
+    void OnAttacking()
+    {
+        if (handlingObj == 3)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                isAttacking = true;
+                speed = 0f;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                isAttacking = false;
                 speed = initialSpeed;
             }
         }
