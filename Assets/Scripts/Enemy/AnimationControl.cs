@@ -29,7 +29,7 @@ public class AnimationControl : MonoBehaviour
 
     public void Attack()
     {
-        if(skeleton.isDead)
+        if(!skeleton.isDead)
         {
             Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, playerLayer);
 
@@ -49,7 +49,7 @@ public class AnimationControl : MonoBehaviour
             skeleton.isDead = true;
             anim.SetTrigger("death");
 
-            Destroy(skeleton.gameObject, 1f);
+            Destroy(skeleton.gameObject, 2f);
         }
         else
         {
