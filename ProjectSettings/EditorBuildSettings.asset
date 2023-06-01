@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/main_menu.unity
+    guid: 2f37a5c27428d7c49aab6921c0f4fcbc
   - enabled: 1
-    path: Assets/Scenes/teste.unity
-    guid: 0b93729d7ab2816438d4bfc944467623
+    path: Assets/Scenes/Essential.unity
+    guid: 18aeb92da2057f5449312fc6cec0feb5
+  - enabled: 1
+    path: Assets/Scenes/main_scene.unity
+    guid: ea85f0fb61bbd1940b87aedc9d85010c
+  - enabled: 1
+    path: Assets/Scenes/player_room.unity
+    guid: 8f10afd12380c164c8e286157812ebbc
+  - enabled: 1
+    path: Assets/Scenes/dungeon_room.unity
+    guid: 8e7581b1118d73e4dbd69f3e0ab1ec35
+  - enabled: 1
+    path: Assets/Scenes/witch_house.unity
+    guid: 31b1636672eb70440aaf5d85d1df3b2b
   m_configObjects: {}

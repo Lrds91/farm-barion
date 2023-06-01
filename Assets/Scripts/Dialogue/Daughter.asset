@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5d9b71e35a09b489f445e3eee7a9a5, type: 3}
+  m_Name: Daughter
+  m_EditorClassIdentifier: 
+  actor: {fileID: 665287919994154980, guid: 7a3da4850c2ee0045a7140ce6cd86ee3, type: 3}
+  speakerSprite: {fileID: 0}
+  sentence: 
+  dialogue:
+  - actorName: 
+    portrait: {fileID: 2160045172218659163, guid: 9a0cc362f25ade84e88cc0b9abeed6e3, type: 3}
+    sentence:
+      Portuguese: "Quem \xE9 voc\xEA? \xC9 capanga daquele paladino corrupto?"
+      English: 
+  - actorName: 
+    portrait: {fileID: 2160045172218659163, guid: 9a0cc362f25ade84e88cc0b9abeed6e3, type: 3}
+    sentence:
+      Portuguese: "N\xE3o?! Ent\xE3o voc\xEA veio me salvar?!"
+      English: 
+  - actorName: 
+    portrait: {fileID: 2160045172218659163, guid: 9a0cc362f25ade84e88cc0b9abeed6e3, type: 3}
+    sentence:
+      Portuguese: Me desculpe mas estou fraca e cansada. Pode me levar de volta ao
+        vilarejo?
+      English: 

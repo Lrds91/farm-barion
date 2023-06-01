@@ -305,7 +305,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6677806975911841103, guid: 9f60ebd4840b8c5479d1f955ebd05a78, type: 3}
+  m_Sprite: {fileID: 3694261078260737984, guid: f24fdf6e08543d64499ff25d9be1e0de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -365,11 +365,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1904775234010579043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4676b4c228c99145b2aeaeabea66f6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2456836575f5ce344a79593e7ed5a470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1904775234681925735}
-  radius: 0.3
+  radius: 0.5
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -582,6 +582,10 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 457997954}
   isDead: 0
+  radius: 3
+  layer:
+    serializedVersion: 2
+    m_Bits: 64
   agent: {fileID: 1904775234620801572}
   animControl: {fileID: 1904775234010579045}
 --- !u!195 &1904775234620801572
@@ -598,7 +602,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 1.7
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

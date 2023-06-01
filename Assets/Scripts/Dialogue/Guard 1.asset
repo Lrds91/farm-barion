@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5d9b71e35a09b489f445e3eee7a9a5, type: 3}
+  m_Name: Guard 1
+  m_EditorClassIdentifier: 
+  actor: {fileID: 3075062251679099545, guid: 2eaacf3937b48aa41a3bfda13d720cf9, type: 3}
+  speakerSprite: {fileID: 0}
+  sentence: 
+  dialogue:
+  - actorName: Guarda
+    portrait: {fileID: -7256965844430136135, guid: 7eb1a73457d3fac41b90e3a1bcd6cd7c, type: 3}
+    sentence:
+      Portuguese: "Eu n\xE3o iria por ai se fosse voc\xEA."
+      English: 
+  - actorName: Guarda
+    portrait: {fileID: -7256965844430136135, guid: 7eb1a73457d3fac41b90e3a1bcd6cd7c, type: 3}
+    sentence:
+      Portuguese: "A corrup\xE7\xE3o est\xE1 bem presente nessa \xE1rea, sem contar
+        que a casa da bruxa tamb\xE9m fica por aqui."
+      English: 
+  - actorName: Guarda
+    portrait: {fileID: -7256965844430136135, guid: 7eb1a73457d3fac41b90e3a1bcd6cd7c, type: 3}
+    sentence:
+      Portuguese: "Ah voc\xEA veio a pedido do prefeito? "
+      English: 
+  - actorName: Guarda
+    portrait: {fileID: -7256965844430136135, guid: 7eb1a73457d3fac41b90e3a1bcd6cd7c, type: 3}
+    sentence:
+      Portuguese: "Apenas tome cuidado e n\xE3o esque\xE7a de levar alguns peixes
+        e cenouras."
+      English: 
+  - actorName: Guarda
+    portrait: {fileID: -7256965844430136135, guid: 7eb1a73457d3fac41b90e3a1bcd6cd7c, type: 3}
+    sentence:
+      Portuguese: Caso tenha se esquecido como usar, aperte G para usar os peixes
+      English: 
+  - actorName: Guarda
+    portrait: {fileID: -7256965844430136135, guid: 7eb1a73457d3fac41b90e3a1bcd6cd7c, type: 3}
+    sentence:
+      Portuguese: "E H para usar as cenouras. Eles ir\xE3o te ajudar contra o que
+        est\xE1 por vir."
+      English: 

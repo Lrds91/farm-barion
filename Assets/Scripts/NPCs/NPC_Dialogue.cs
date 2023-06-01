@@ -7,12 +7,13 @@ public class NPC_Dialogue : MonoBehaviour
     public float dialogueRange;
     public LayerMask playerLayer;
     public Settings dialogue;
+    public GameObject dialogueIcon;
 
-    bool playerHit;
+    public bool playerHit;
 
-    private List<string> sentences = new List<string>();
-    private List<string> actorName = new List<string>();
-    private List<Sprite> spriteActor = new List<Sprite>();
+    public List<string> sentences = new List<string>();
+    public List<string> actorName = new List<string>();
+    public List<Sprite> spriteActor = new List<Sprite>();
 
     private void Update()
     {
@@ -71,6 +72,17 @@ public class NPC_Dialogue : MonoBehaviour
     private void OnDrawGizmosSelected() //desenha um gizmo na tela para que a colisão do diálogo apareça na unity
     {
         Gizmos.DrawWireSphere(transform.position, dialogueRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        InitiateDialog();
+        dialogueIcon.SetActive(true);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        dialogueIcon.SetActive(false);
     }
 
 }

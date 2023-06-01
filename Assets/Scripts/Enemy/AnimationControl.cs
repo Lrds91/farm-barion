@@ -10,6 +10,7 @@ public class AnimationControl : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
 
     private PlayerAnim player;
+    private Player playerDamage;
     private Animator anim;
     private Skeleton skeleton;
 
@@ -18,6 +19,7 @@ public class AnimationControl : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerDamage = FindObjectOfType<Player>();
         player = FindObjectOfType<PlayerAnim>();
         skeleton = GetComponentInParent<Skeleton>();
     }
@@ -37,6 +39,8 @@ public class AnimationControl : MonoBehaviour
             {
                 //colisão com player detectada, chama animação de dano
                 player.OnHit();
+                playerDamage.TakeDamage(2);
+                playerDamage.UpdateHPBar();
             }
         }
         
