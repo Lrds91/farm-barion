@@ -17,13 +17,13 @@ public class NPC : MonoBehaviour
     void Start()
     {
         initialSpeed = speed;
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(DialogManager.instance.isShowing) //se o jogador chegar no range de conversação o NPC irá parar, caso o contrário irá retomar a velocidade normal
+        if(DialogManager.instance.isShowing) //se o jogador chegar no range de conversação e apertar F o NPC irá parar, caso o contrário irá retomar a velocidade normal
         {
             speed = 0f;
             anim.SetBool("isWalking", false);

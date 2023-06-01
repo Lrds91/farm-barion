@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5d9b71e35a09b489f445e3eee7a9a5, type: 3}
+  m_Name: Witch
+  m_EditorClassIdentifier: 
+  actor: {fileID: 665287919994154980, guid: 58870af51826b3b47be0d615d5367463, type: 3}
+  speakerSprite: {fileID: 0}
+  sentence: 
+  dialogue:
+  - actorName: 
+    portrait: {fileID: -8294998830212189037, guid: 512f63302974d654eac05a6f59c10bba, type: 3}
+    sentence:
+      Portuguese: "Quem \xE9 voc\xEA e o que faz na minha casa? "
+      English: 'Who are you and what are you doing here? '
+  - actorName: 
+    portrait: {fileID: -8294998830212189037, guid: 512f63302974d654eac05a6f59c10bba, type: 3}
+    sentence:
+      Portuguese: "Se acha que tenho algo a ver com o sequestro da filha do prefeito,
+        saia j\xE1 daqui! "
+      English: If you think that I have something to do with the mayor's daughter
+        kidnap, begone!
+  - actorName: 
+    portrait: {fileID: -8294998830212189037, guid: 512f63302974d654eac05a6f59c10bba, type: 3}
+    sentence:
+      Portuguese: "Estou farta de gente se metendo nas minhas coisas e falsas acusa\xE7\xF5es."
+      English: I'm sick of people sticking in my business and false acusations.

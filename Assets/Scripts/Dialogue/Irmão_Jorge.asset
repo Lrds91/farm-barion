@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5d9b71e35a09b489f445e3eee7a9a5, type: 3}
+  m_Name: "Irm\xE3o_Jorge"
+  m_EditorClassIdentifier: 
+  actor: {fileID: 2723419783787432707, guid: ae1f1fe38f8905d459872ae4ec28739c, type: 3}
+  speakerSprite: {fileID: 0}
+  sentence: 
+  dialogue:
+  - actorName: Fazendeiro
+    portrait: {fileID: 3268470051332887831, guid: 13e3f0f9185da8c4abd7f3cd60cd75b4, type: 3}
+    sentence:
+      Portuguese: "Ol\xE1, voc\xEA viu meu irm\xE3o por ai? "
+      English: Welcome, Adventurer!
+  - actorName: Fazendeiro
+    portrait: {fileID: 3268470051332887831, guid: 13e3f0f9185da8c4abd7f3cd60cd75b4, type: 3}
+    sentence:
+      Portuguese: "Ele disse que ia dar uma volta mas j\xE1 faz tempo que n\xE3o
+        o vejo."
+      English: Nice to meet you, my name is Jorge. I am the owner of the farm near
+        the city.
+  - actorName: Fazendeiro
+    portrait: {fileID: 3268470051332887831, guid: 13e3f0f9185da8c4abd7f3cd60cd75b4, type: 3}
+    sentence:
+      Portuguese: "Ele tem mania de andar por perto da colina. Espero que ele n\xE3o
+        fa\xE7a nada est\xFApido."
+      English: Wait... You look familiar....
+  - actorName: Fazendeiro
+    portrait: {fileID: 3268470051332887831, guid: 13e3f0f9185da8c4abd7f3cd60cd75b4, type: 3}
+    sentence:
+      Portuguese: "Por favor, v\xE1 encontrar o prefeito! Ele est\xE1 na vila seguindo
+        esta estrada."
+      English: Please, go see the Mayor. He's in the village down this road.

@@ -10,7 +10,7 @@ public class Tree : MonoBehaviour
     [SerializeField] private GameObject woodPrefab;
     [SerializeField] private int totalWood;
 
-    [SerializeField] private ParticleSystem leaves;
+    [SerializeField] private ParticleSystem leafes;
 
     private bool isCut;
 
@@ -30,7 +30,7 @@ public class Tree : MonoBehaviour
     {
         treeHealth--;
         anim.SetTrigger("isHit"); //ativa a animação de hit
-        leaves.Play();
+        leafes.Play();
 
         if (treeHealth <= 0) //se HP da árvore for <= 0 então irá instanciar os drops
         {

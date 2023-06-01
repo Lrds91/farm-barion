@@ -20,12 +20,13 @@ public class SlotFarm : MonoBehaviour
     [SerializeField] private int waterAmount; //total de água para nascer uma cenoura
 
     [SerializeField] private bool detecting;
+
     private bool isPlayer; //indica se o player está encostando
 
     private int initialDigAmount;
     private int currentWater;
 
-    private bool dugHole;
+    [SerializeField] private bool dugHole;
     private bool carrotPlant;
 
     PlayerItems playerItems;

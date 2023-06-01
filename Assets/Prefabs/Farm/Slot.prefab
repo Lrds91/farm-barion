@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026159048, y: -0.02092719}
+  m_Offset: {x: -0.029081821, y: -0.050154686}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -140,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70353174, y: 0.73492193}
+  m_Size: {x: 0.6, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &4015103885275217151
 MonoBehaviour:
@@ -158,11 +158,12 @@ MonoBehaviour:
   holeSFX: {fileID: 8300000, guid: c61ac28c78e541a47b7a25ef51ecd0f4, type: 3}
   carrotSFX: {fileID: 8300000, guid: 2231142b09e66a340a598bf74810f12c, type: 3}
   spriteRenderer: {fileID: 4015103884160972004}
-  hole: {fileID: -1108098455314781316, guid: 53790cf3b44ac824f963118e982f5c83, type: 3}
-  carrot: {fileID: 950061346773986722, guid: 53790cf3b44ac824f963118e982f5c83, type: 3}
-  digAmount: 4
+  hole: {fileID: 7548850542193217842, guid: ad9a203e92c29fd44b6470eef50365ce, type: 3}
+  carrot: {fileID: -7667708147088096936, guid: ad9a203e92c29fd44b6470eef50365ce, type: 3}
+  digAmount: 2
   waterAmount: 20
   detecting: 0
+  dugHole: 0
 --- !u!82 &2140657158428549305
 AudioSource:
   m_ObjectHideFlags: 0

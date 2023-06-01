@@ -6,7 +6,10 @@ using UnityEngine.Rendering;
 public class PlayerAnim : MonoBehaviour
 {
     [Header("Attack Settings")]
-    [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform attackPointDown;
+    [SerializeField] private Transform attackPointUp;
+    [SerializeField] private Transform attackPointLeft;
+    [SerializeField] private Transform attackPointRight;
     [SerializeField] private float radius;
     [SerializeField] private LayerMask enemyLayer;
     
@@ -29,7 +32,7 @@ public class PlayerAnim : MonoBehaviour
     void Update()
     {
         OnMove();
-        OnRun();
+        //OnRun();
 
         if(isHitting)
         {
@@ -69,14 +72,6 @@ public class PlayerAnim : MonoBehaviour
             anim.SetInteger("Transition", 0);
         }
 
-        if (player.direction.x > 0)
-        {
-            transform.eulerAngles = new Vector2(0, 0);
-        }
-        if (player.direction.x < 0)
-        {
-            transform.eulerAngles = new Vector2(0, 180);
-        }
 
         if(player.isCutting)
         {
@@ -98,13 +93,13 @@ public class PlayerAnim : MonoBehaviour
         }
     }
 
-    void OnRun()
-    {
-        if(player.isRunning && player.direction.sqrMagnitude > 0)
-        {
-            anim.SetInteger("Transition", 2);
-        }
-    }
+    //void OnRun()
+    //{
+    //    if(player.isRunning && player.direction.sqrMagnitude > 0)
+    //    {
+    //        anim.SetInteger("Transition", 2);
+    //    }
+    //}
 
     #endregion
 
@@ -112,12 +107,57 @@ public class PlayerAnim : MonoBehaviour
 
     public void onAttack()
     {
-        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, enemyLayer);
+        Collider2D hitDown = Physics2D.OverlapCircle(attackPointDown.position, radius, enemyLayer);
+        Collider2D hitUp = Physics2D.OverlapCircle(attackPointUp.position, radius, enemyLayer);
+        Collider2D hitLeft = Physics2D.OverlapCircle(attackPointLeft.position, radius, enemyLayer);
+        Collider2D hitRight = Physics2D.OverlapCircle(attackPointRight.position, radius, enemyLayer);
 
-        if(hit != null)
+        if (hitDown != null)
         {
             //atacou o inimigo
-            hit.GetComponentInChildren<AnimationControl>().OnHit();
+            hitDown.GetComponentInChildren<AnimationControl>().OnHit();
+        }
+        else if (hitUp != null)
+        {
+            hitUp.GetComponentInChildren<AnimationControl>().OnHit();
+        }
+        else if (hitLeft != null)
+        {
+            hitLeft.GetComponentInChildren<AnimationControl>().OnHit();
+        }
+        else if (hitRight != null)
+        {
+            hitRight.GetComponentInChildren<AnimationControl>().OnHit();
+        }
+        else
+        {
+
+        }
+    }
+
+    public void onAttackPaladin()
+    {
+        Collider2D hitDown = Physics2D.OverlapCircle(attackPointDown.position, radius, enemyLayer);
+        Collider2D hitUp = Physics2D.OverlapCircle(attackPointUp.position, radius, enemyLayer);
+        Collider2D hitLeft = Physics2D.OverlapCircle(attackPointLeft.position, radius, enemyLayer);
+        Collider2D hitRight = Physics2D.OverlapCircle(attackPointRight.position, radius, enemyLayer);
+
+        if (hitDown != null)
+        {
+            //atacou o inimigo
+            hitDown.GetComponentInChildren<PaladinAnim>().OnHit();
+        }
+        else if (hitUp != null)
+        {
+            hitUp.GetComponentInChildren<PaladinAnim>().OnHit();
+        }
+        else if (hitLeft != null)
+        {
+            hitLeft.GetComponentInChildren<PaladinAnim>().OnHit();
+        }
+        else if (hitRight != null)
+        {
+            hitRight.GetComponentInChildren<PaladinAnim>().OnHit();
         }
         else
         {
@@ -129,7 +169,10 @@ public class PlayerAnim : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(attackPoint.position, radius);
+        Gizmos.DrawWireSphere(attackPointDown.position, radius);
+        Gizmos.DrawWireSphere(attackPointUp.position, radius);
+        Gizmos.DrawWireSphere(attackPointLeft.position, radius);
+        Gizmos.DrawWireSphere(attackPointRight.position, radius);
     }
 
     #endregion
@@ -160,9 +203,10 @@ public class PlayerAnim : MonoBehaviour
 
     public void OnHit()
     {
-        if(!isHitting)
+        if(!isHitting && player.isDead == false)
         {
             anim.SetTrigger("hit");
+
             isHitting = true;
         }
     }

@@ -18,15 +18,13 @@ public class Skeleton : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private AnimationControl animControl;
 
-
-
     private Player player;
     private bool detectPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType < Player>();
+        player = FindObjectOfType<Player>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         currentHealth = totalHealth;
@@ -35,9 +33,10 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isDead && detectPlayer)
+        if (!isDead && detectPlayer)
         {
             agent.isStopped = false;
+
             //faz ir em direção ao player
             agent.SetDestination(player.transform.position);
 
@@ -60,7 +59,7 @@ public class Skeleton : MonoBehaviour
             }
             else
             {
-                transform.eulerAngles = new Vector2(0, 180);
+                transform.eulerAngles = new Vector2(0, -180);
             }
         }
     }

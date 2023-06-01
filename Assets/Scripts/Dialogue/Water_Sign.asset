@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5d9b71e35a09b489f445e3eee7a9a5, type: 3}
+  m_Name: Water_Sign
+  m_EditorClassIdentifier: 
+  actor: {fileID: 5943510873886381219, guid: 5e9117a72f26be54096db516293b4eae, type: 3}
+  speakerSprite: {fileID: 1291639929167541799, guid: 646b461b0e5ada14185e54f3afbac57d, type: 3}
+  sentence: 
+  dialogue:
+  - actorName: Placa
+    portrait: {fileID: 1291639929167541799, guid: 646b461b0e5ada14185e54f3afbac57d, type: 3}
+    sentence:
+      Portuguese: "Ao lado da \xE1gua \xE9 poss\xEDvel executar 2 tipos de a\xE7\xF5es
+        diferentes."
+      English: It's possible to do 2 different actions near the water pond.
+  - actorName: Placa
+    portrait: {fileID: 1291639929167541799, guid: 646b461b0e5ada14185e54f3afbac57d, type: 3}
+    sentence:
+      Portuguese: 'Caso queira pescar, aproxime-se do lago e aperte a tecla "F". '
+      English: If you wish to fish, press "F" near the lake.
+  - actorName: Placa
+    portrait: {fileID: 1291639929167541799, guid: 646b461b0e5ada14185e54f3afbac57d, type: 3}
+    sentence:
+      Portuguese: Caso queira encher o balde aperte  a tecla "E".
+      English: If you need to fill the water bucket press "E".

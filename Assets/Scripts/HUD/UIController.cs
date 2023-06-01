@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
     [Header("Items")] //controla UI dos itens
     [SerializeField] private Image waterUIBar;
-    [SerializeField] private Image woodUIBar;
-    [SerializeField] private Image carrotUIBar;
-    [SerializeField] private Image fishUIBar;
+    [SerializeField] private TextMeshProUGUI uiTextWater;
+    [SerializeField] private TextMeshProUGUI uiTextWood;
+    [SerializeField] private TextMeshProUGUI uiTextFish;
+    [SerializeField] private TextMeshProUGUI uiTextCarrot;
 
-    //mesmo método acima porém em lista
+    //mesmo método acima porém em lista, cuida da lista de ferramentas/itens selecionados
     public List<Image> toolsUI = new List<Image>();
 
     [SerializeField] private Color selectColor;
@@ -19,6 +21,8 @@ public class UIController : MonoBehaviour
 
     private PlayerItems playerItems;
     private Player player;
+    public Slider healthBar;
+    public Stat hp;
 
     private void Awake()
     {
@@ -27,21 +31,19 @@ public class UIController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        waterUIBar.fillAmount = 0f;
-        woodUIBar.fillAmount = 0f;
-        carrotUIBar.fillAmount = 0f;
-        fishUIBar.fillAmount = 0f;
+    public void Set(int cur, int max){
+        healthBar.maxValue = max;
+        healthBar.value = cur;
     }
 
     // Update is called once per frame
     void Update()
     {
-        waterUIBar.fillAmount = playerItems.currentWater / playerItems.waterLimit;
-        woodUIBar.fillAmount = playerItems.totalWood / playerItems.woodLimit;
-        carrotUIBar.fillAmount = playerItems.carrots / playerItems.carrotLimit;
-        fishUIBar.fillAmount = playerItems.fishes / playerItems.fishesLimit;
+        uiTextWater.text = playerItems.currentWater.ToString();
+        uiTextWood.text = playerItems.totalWood.ToString();
+        uiTextFish.text = playerItems.fishes.ToString();
+        uiTextCarrot.text = playerItems.carrots.ToString();
+
 
         toolsUI[player.handlingObj].color = selectColor;
 

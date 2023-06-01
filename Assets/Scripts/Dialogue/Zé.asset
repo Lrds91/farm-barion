@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5d9b71e35a09b489f445e3eee7a9a5, type: 3}
+  m_Name: "Z\xE9"
+  m_EditorClassIdentifier: 
+  actor: {fileID: 2723419783787432707, guid: a89bf3356cacb0f449ec77f5bc831193, type: 3}
+  speakerSprite: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+  sentence: 
+  dialogue:
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: "Ol\xE1, sou o prefeito deste vilarejo. Meu nome \xE9 Jos\xE9 mas
+        todos aqui me chamam apenas de Z\xE9."
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: "N\xE3o esperava que fosse chegar t\xE3o rapidamente. "
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: "A situa\xE7\xE3o daqui vem piorando a cada dia que passa...."
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: "Alguns monstros est\xE3o causando um alvoro\xE7o nos arredores. "
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: "Sei que \xE9 muito repentino mas poderia nos ajudar com este problema?"
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: "Nas colinas acima est\xE1 o esconderijo de um bando de bandidos. "
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: 'Eles sequestraram a minha filha. Por favor resgate-a. '
+      English: 
+  - actorName: "Z\xE9"
+    portrait: {fileID: -2184874253910416793, guid: 56d89c624344d6546a094f1c11b6a970, type: 3}
+    sentence:
+      Portuguese: Caso tenha sucesso lhe darei uma bela recompensa.
+      English: 
